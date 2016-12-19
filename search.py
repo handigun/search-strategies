@@ -1,16 +1,5 @@
 from operator import attrgetter
 
-class node:
-    def __init__(self, iden, st, pa, de, co, hc):
-        self.id = iden
-        self.state = st
-        self.parent = pa
-        self.depth = de
-        self.cost = co
-        self.heu_cost = hc
-    def __str__(self):
-        return "[%s, %s, %s, %s]" %(self.state, self.parent, self.depth, self.cost)
-
 def navigate():
     f = open("input.txt","r")
     s = f.read()
@@ -48,14 +37,7 @@ def navigate():
     write_out(result)
     ##print(result)
         
-'''
-While adding to explored list add what parent it comes from, the cost.
-Check sort by value for dictionary
-Needs to be added to open list
-Open list and explored list are dictionary
-Need the extra info for finding the path
-Or maintain multiple lists afn change in one list should reflect in another
-'''        
+  
 def search(live, algo, start, goal, sun):
     open_lst = []
     explored_lst = []
